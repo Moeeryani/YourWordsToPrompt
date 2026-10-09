@@ -74,6 +74,86 @@
     .footerline a { text-decoration:none; color:var(--accent2); }
     .toast { position:fixed; z-index:50; bottom:30px; left:50%; transform:translate(-50%,20px); background:#252322; border:1px solid #ff6737; color:white; border-radius:13px; padding:13px 22px; box-shadow:0 20px 60px #0009; font-size:14px; font-weight:800; pointer-events:none; opacity:0; transition:opacity .2s ease,transform .2s ease; text-align:center; width:max-content; max-width:calc(100vw - 35px); }
     .toast.show { opacity:1; transform:translate(-50%,0); }
+
+    /* Interactive usage walkthrough — illustrated, not official app screenshots. */
+    .how { padding:0 0 64px; }
+    .how-title-row {display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:23px}
+    .how-title-row h2 {margin:0 0 5px;font-size:clamp(24px,3vw,32px);line-height:1.55;font-weight:900}
+    .how-title-row p {margin:0;color:var(--muted);font-size:14px;line-height:1.9}
+    .flow-legend {color:#ff8b69;font-size:12px;font-weight:800;white-space:nowrap}
+    .use-tabs {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:16px}
+    .use-tab {display:flex;justify-content:center;align-items:center;gap:10px;min-height:60px;padding:13px 12px;color:#ccc;background:#191b1d;border:1px solid #373737;border-radius:13px;font-weight:800;font-size:14px;transition:background-color .18s,border-color .18s,color .18s}
+    .use-tab[aria-selected="true"] {border-color:var(--accent);background:#291a15;color:white;box-shadow:inset 0 -3px var(--accent)}
+    .use-tab span {font-size:18px;line-height:1}
+    .use-tab:hover {border-color:#99503a}
+    .walkthrough {border:1px solid #504138;border-radius:20px;background:linear-gradient(140deg,#1b1b1b,#111416);overflow:hidden}
+    .walkthrough-top {padding:17px 23px;display:flex;align-items:center;gap:15px;justify-content:space-between;border-bottom:1px solid var(--line)}
+    .walkthrough-title {font-size:15px;font-weight:900;margin:0}
+    .demo-label {font-size:11px;color:#c2bdb9}
+    .replay {border:1px solid #604234;color:#ff9874;border-radius:9px;font-size:12px;font-weight:800;padding:8px 12px;background:transparent}
+    .replay:hover {background:#302019}
+    .walkthrough-grid {display:grid;grid-template-columns:1.22fr .78fr;gap:0;min-height:365px}
+    .demo-stage {background:radial-gradient(ellipse at 55% 0%,#28201c 0%,#151617 60%);padding:23px;display:flex;flex-direction:column;justify-content:center;overflow:hidden;position:relative}
+    .demo-pane {display:flex;flex-direction:column;gap:16px;min-height:295px;justify-content:center}
+    .demo-pane[hidden],.demo-detail[hidden] {display:none!important}
+    .fake-app {border:1px solid #454140;background:#111315;border-radius:16px;overflow:hidden;box-shadow:0 18px 60px rgba(0,0,0,.35)}
+    .fake-bar {background:#1d1f20;border-bottom:1px solid #3a3837;display:flex;gap:9px;align-items:center;justify-content:space-between;padding:12px 15px;font-size:12px;color:#e9e5e2;font-weight:800}
+    .fake-dots {display:flex;gap:5px;direction:ltr}
+    .fake-dots i {display:block;width:7px;height:7px;border-radius:50%;background:#64554c}
+    .fake-dots i:first-child {background:#ff4a12}
+    .fake-content {padding:22px 17px;min-height:170px;display:flex;flex-direction:column;gap:13px;justify-content:center}
+    .motion-origin {display:flex;gap:10px;align-items:center;justify-content:center;padding:10px 12px;border:1px solid #955033;background:#322018;border-radius:12px;color:#fff;font-size:13px;font-weight:850;align-self:center;max-width:100%}
+    .motion-origin b {background:#ff4a12;padding:5px 8px;border-radius:7px;font:900 12px Arial,sans-serif}
+    .motion-arrow {text-align:center;color:var(--accent);font-weight:900;font-size:28px;line-height:1}
+    .paste-area {border:1px solid #6d4436;background:#241a18;border-radius:12px;padding:14px;display:grid;gap:10px}
+    .paste-heading {font-size:12px;color:#ff9e7b;font-weight:850;display:flex;gap:8px;align-items:center}
+    .paste-heading::before {content:"";width:7px;height:7px;border-radius:50%;background:#ff4a12}
+    .mock-code {display:block;color:#e2d9d4;direction:ltr;text-align:left;font:11px/1.75 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+    .task-line {display:flex;align-items:center;gap:8px;color:#ddd;font-size:12px;border:1px solid #3e3f40;background:#1b1e1f;padding:10px 12px;border-radius:10px;line-height:1.65}
+    .task-line strong {color:#ff8b65}
+    .fake-crumb {font-size:11px;color:#c7c0bd;display:flex;gap:7px;align-items:center;flex-wrap:wrap;line-height:1.7}
+    .fake-crumb .activecrumb {color:#ff815a;font-weight:900}
+    .project-card {border:1px solid #4e4946;background:#181a1b;border-radius:12px;padding:14px;display:grid;gap:9px}
+    .project-card-header {display:flex;justify-content:space-between;align-items:center;gap:10px;font-size:14px;font-weight:900}
+    .project-tag {font-size:10px;background:#4b2a1c;color:#ffd0c0;padding:3px 9px;border-radius:30px;white-space:nowrap}
+    .fake-save {align-self:flex-start;border-radius:8px;background:#ff4a12;padding:7px 17px;font-size:12px;font-weight:900;color:white}
+    .demo-sidebar {border-right:1px solid #373533;padding:22px 23px;display:flex;flex-direction:column;justify-content:center;gap:16px}
+    .demo-detail {display:grid;gap:13px}
+    .demo-detail h3 {font-size:20px;line-height:1.5;font-weight:900;margin:0}
+    .detail-intro {font-size:12px;line-height:1.85;color:var(--muted);margin:0}
+    .detail-step {display:flex;gap:11px;align-items:flex-start;font-size:13px;line-height:1.9;color:#ecebea}
+    .detail-step span {border:1px solid #813a23;background:#2d1e18;width:25px;min-width:25px;height:25px;display:grid;place-items:center;border-radius:7px;color:#ff936e;font:800 12px Arial,sans-serif;margin-top:2px}
+    .detail-step b {font-weight:780}
+    .detail-note {border-right:3px solid var(--accent);padding:9px 12px;background:#211b18;font-size:11px;line-height:1.9;color:#d9d0c9;border-radius:6px}
+    .quick-copy {display:flex;gap:9px;align-items:center;justify-content:center;color:#fff;background:#e94713;border:0;border-radius:11px;padding:12px 18px;font-size:14px;font-weight:900;width:100%}
+    .quick-copy:hover {background:#fb612e}
+    .walkthrough-bottom {padding:13px 22px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;gap:15px;flex-wrap:wrap;font-size:11px;color:var(--muted)}
+    .walkthrough-bottom a {color:#ff906b;text-decoration:none;font-weight:750}
+    .demo-pane.is-active .motion-origin {animation:originFlash 4s ease both}
+    .demo-pane.is-active .motion-arrow {animation:arrowFlow 4s ease both}
+    .demo-pane.is-active .paste-area {animation:pasteEnter 4s ease both}
+    .demo-pane.is-active .task-line,.demo-pane.is-active .fake-save {animation:taskEnter 4s ease both}
+    @keyframes originFlash {0%{opacity:0;transform:translateY(13px)} 16%,100%{opacity:1;transform:translateY(0)} 17%,31%{box-shadow:0 0 22px rgba(255,74,18,.3)}}
+    @keyframes arrowFlow {0%,17%{opacity:0;transform:translateY(-12px)} 29%,100%{opacity:1;transform:translateY(0)}}
+    @keyframes pasteEnter {0%,31%{opacity:0;transform:translateY(17px) scale(.97)} 44%,100%{opacity:1;transform:translateY(0) scale(1)}}
+    @keyframes taskEnter {0%,56%{opacity:0;transform:translateY(12px)} 72%,100%{opacity:1;transform:translateY(0)}}
+    @media(max-width:700px){
+      .use-tabs {gap:6px}
+      .use-tab {padding:11px 7px;min-height:67px;font-size:11px;flex-direction:column;gap:5px}
+      .walkthrough-top {padding:13px 15px}
+      .walkthrough-grid {grid-template-columns:1fr}
+      .demo-stage {padding:18px}
+      .demo-pane {min-height:290px}
+      .demo-sidebar {border-right:0;border-top:1px solid #373533;padding:20px 18px}
+      .demo-detail h3 {font-size:18px}
+      .how-title-row p {font-size:12px}
+      .walkthrough-bottom {padding:13px 15px}
+      .fake-content {padding:16px 13px}
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .demo-pane.is-active .motion-origin,.demo-pane.is-active .motion-arrow,.demo-pane.is-active .paste-area,.demo-pane.is-active .task-line,.demo-pane.is-active .fake-save {animation:none!important;opacity:1!important;transform:none!important}
+    }
+
     @media (max-width:700px) {
       .top { min-height:77px; } .creator { gap:8px; } .avatar { width:36px;height:36px;font-size:20px; } .byline b { font-size:9px;letter-spacing:1.3px; } .byline span { font-size:8px;letter-spacing:.6px; }
       .headlink { font-size:11px; } .hero { padding:53px 0 42px; }
@@ -132,13 +212,107 @@
       </div>
     </section>
     <section class="how" aria-labelledby="how-title">
-      <h2 id="how-title">كيف تستخدمه؟</h2>
-      <div class="steps">
-        <div class="step"><span class="stepnum">01</span><h3>انسخ البرومبت</h3><p>اضغط زر النسخ. سيُنسخ النص الرسمي كاملًا، وليس مجرد الجزء الظاهر في المعاينة.</p></div>
-        <div class="step"><span class="stepnum">02</span><h3>الصقه في مساعدك</h3><p>ضعه في تعليمات المساعد أو في بداية محادثة جديدة مع أداة الذكاء الاصطناعي التي تستخدمها.</p></div>
-        <div class="step"><span class="stepnum">03</span><h3>اطلب ما تريد بطريقتك</h3><p>اكتب فكرتك بكلام عادي. سيصوغ لك برومبتًا مناسبًا، وقد يسألك فقط عن المعلومات المهمة الناقصة.</p></div>
+      <div class="how-title-row">
+        <div>
+          <h2 id="how-title">كيف تستخدم البرومبت؟ شاهد الطريقة بنفسك</h2>
+          <p>طريقتان للاستخدام: محادثة واحدة الآن، أو تعليمات ثابتة داخل مشروعك.</p>
+        </div>
+        <span class="flow-legend">● شرح تفاعلي متحرك</span>
+      </div>
+      <div class="use-tabs" role="tablist" aria-label="طرق استخدام البرومبت">
+        <button class="use-tab" id="use-tab-chat" type="button" role="tab" aria-controls="demo-chat" aria-selected="true" tabindex="0" data-demo-tab="chat"><span aria-hidden="true">💬</span>محادثة مباشرة</button>
+        <button class="use-tab" id="use-tab-gpt" type="button" role="tab" aria-controls="demo-gpt" aria-selected="false" tabindex="-1" data-demo-tab="gpt"><span aria-hidden="true">✦</span>مشروع ChatGPT</button>
+        <button class="use-tab" id="use-tab-claude" type="button" role="tab" aria-controls="demo-claude" aria-selected="false" tabindex="-1" data-demo-tab="claude"><span aria-hidden="true">✳</span>مشروع Claude</button>
+      </div>
+      <div class="walkthrough">
+        <div class="walkthrough-top">
+          <div><h3 class="walkthrough-title">من زر «نسخ البرومبت» إلى الاستخدام الفعلي</h3><span class="demo-label">رسم توضيحي متحرك — ليس تصويرًا لواجهات التطبيقات الرسمية</span></div>
+          <button id="demo-replay" class="replay" type="button" aria-label="إعادة تشغيل الحركة">↻ إعادة الحركة</button>
+        </div>
+        <div class="walkthrough-grid">
+          <div class="demo-stage">
+            <div class="demo-pane is-active" id="demo-chat" role="tabpanel" aria-labelledby="use-tab-chat" data-demo-panel="chat" tabindex="0">
+              <div class="motion-origin"><b>Y</b> البرومبت الرسمي ← تم نسخه</div>
+              <div class="motion-arrow" aria-hidden="true">↓</div>
+              <div class="fake-app">
+                <div class="fake-bar"><span>محادثة جديدة · ChatGPT أو Claude</span><span class="fake-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+                <div class="fake-content">
+                  <div class="paste-area">
+                    <div class="paste-heading">لصق البرومبت في أول رسالة</div>
+                    <code class="mock-code">&lt;SYSTEM_ARCHITECTURE&gt;</code>
+                    <code class="mock-code">You are the Sovereign Adaptive Compiler...</code>
+                    <code class="mock-code">... &lt;/FINAL_BEHAVIOR_RULES&gt;</code>
+                  </div>
+                  <div class="task-line"><strong>ثم:</strong> اكتب ما تريد بلغتك العادية، مثل «أريد تطوير موقعي».</div>
+                </div>
+              </div>
+            </div>
+            <div class="demo-pane" id="demo-gpt" role="tabpanel" aria-labelledby="use-tab-gpt" data-demo-panel="gpt" hidden tabindex="0">
+              <div class="motion-origin"><b>Y</b> البرومبت الرسمي ← تم نسخه</div>
+              <div class="motion-arrow" aria-hidden="true">↓</div>
+              <div class="fake-app">
+                <div class="fake-bar"><span>ChatGPT · مشروعك</span><span class="fake-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+                <div class="fake-content">
+                  <div class="fake-crumb"><span>المشاريع</span><span>←</span><span>⋯ إعدادات المشروع</span><span>←</span><span class="activecrumb">تعليمات المشروع</span></div>
+                  <div class="project-card">
+                    <div class="project-card-header"><span>Project instructions</span><span class="project-tag">داخل المشروع فقط</span></div>
+                    <div class="paste-area"><div class="paste-heading">ألصق هنا البرومبت كاملًا</div><code class="mock-code">&lt;SYSTEM_ARCHITECTURE&gt; ...</code><code class="mock-code">&lt;/FINAL_BEHAVIOR_RULES&gt;</code></div>
+                    <span class="fake-save">حفظ التعليمات ✓</span>
+                  </div>
+                  <div class="task-line"><strong>بعد الحفظ:</strong> افتح محادثة داخل المشروع واكتب طلبك.</div>
+                </div>
+              </div>
+            </div>
+            <div class="demo-pane" id="demo-claude" role="tabpanel" aria-labelledby="use-tab-claude" data-demo-panel="claude" hidden tabindex="0">
+              <div class="motion-origin"><b>Y</b> البرومبت الرسمي ← تم نسخه</div>
+              <div class="motion-arrow" aria-hidden="true">↓</div>
+              <div class="fake-app">
+                <div class="fake-bar"><span>Claude · Your Project</span><span class="fake-dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+                <div class="fake-content">
+                  <div class="fake-crumb"><span>Projects</span><span>←</span><span class="activecrumb">Set project instructions</span></div>
+                  <div class="project-card">
+                    <div class="project-card-header"><span>Project instructions</span><span class="project-tag">توجيه ثابت للمشروع</span></div>
+                    <div class="paste-area"><div class="paste-heading">ألصق البرومبت في التعليمات</div><code class="mock-code">&lt;SYSTEM_ARCHITECTURE&gt; ...</code><code class="mock-code">&lt;/FINAL_BEHAVIOR_RULES&gt;</code></div>
+                    <span class="fake-save">Save instructions ✓</span>
+                  </div>
+                  <div class="task-line"><strong>بعد الحفظ:</strong> ابدأ محادثة جديدة داخل مشروع Claude.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="demo-sidebar">
+            <div class="demo-detail" data-demo-detail="chat">
+              <h3>لتستخدمه الآن في محادثة واحدة</h3>
+              <p class="detail-intro">لا تحتاج إلى إعداد مشروع أو تثبيت شيء.</p>
+              <div class="detail-step"><span>1</span><b>اضغط «نسخ البرومبت كاملًا».</b></div>
+              <div class="detail-step"><span>2</span><b>افتح محادثة جديدة في ChatGPT أو Claude، والصق النص كاملًا وأرسله.</b></div>
+              <div class="detail-step"><span>3</span><b>اكتب فكرتك بكلامك العادي. ستحصل على برومبت يناسب المهمة.</b></div>
+              <div class="detail-note">المثال في الرسم مختصر للعرض؛ زر النسخ ينسخ جميع التعليمات الرسمية دون اختصار.</div>
+            </div>
+            <div class="demo-detail" data-demo-detail="gpt" hidden>
+              <h3>ليظل البرومبت مفعّلًا في مشروع ChatGPT</h3>
+              <div class="detail-step"><span>1</span><b>افتح ChatGPT، وأنشئ مشروعًا من قسم المشاريع.</b></div>
+              <div class="detail-step"><span>2</span><b>افتح قائمة ⋯ ثم «إعدادات المشروع» وألصق البرومبت في تعليمات المشروع.</b></div>
+              <div class="detail-step"><span>3</span><b>احفظ ثم ابدأ محادثاتك داخل هذا المشروع؛ لا حاجة إلى إعادة لصق البرومبت في كل مرة.</b></div>
+              <div class="detail-note">تعليمات المشروع تنطبق على محادثات هذا المشروع فقط، وليست على كل محادثات حسابك.</div>
+            </div>
+            <div class="demo-detail" data-demo-detail="claude" hidden>
+              <h3>ليظل البرومبت مفعّلًا في مشروع Claude</h3>
+              <div class="detail-step"><span>1</span><b>افتح Claude، وانتقل إلى Projects وأنشئ مشروعًا.</b></div>
+              <div class="detail-step"><span>2</span><b>اختر Set project instructions، والصق البرومبت كاملًا ثم Save instructions.</b></div>
+              <div class="detail-step"><span>3</span><b>اكتب طلباتك داخل محادثات المشروع للاستفادة من التعليمات المحفوظة.</b></div>
+              <div class="detail-note">قد تتطلب مشاريع Claude خطة مدفوعة؛ تحقق من الميزات المتاحة في حسابك.</div>
+            </div>
+            <button class="quick-copy" type="button" data-copy>⧉ نسخ البرومبت الآن</button>
+          </div>
+        </div>
+        <div class="walkthrough-bottom">
+          <span>المحاكاة توضّح مكان لصق التعليمات؛ قد تختلف تفاصيل الواجهة حسب التطبيق.</span>
+          <span><a href="https://help.openai.com/ar/articles/10169521-projects-in-chatgpt" target="_blank" rel="noopener noreferrer">تعليمات مشاريع ChatGPT ↗</a> &nbsp;·&nbsp; <a href="https://support.anthropic.com/en/articles/9519177-how-can-i-create-and-manage-projects" target="_blank" rel="noopener noreferrer">تعليمات مشاريع Claude ↗</a></span>
+        </div>
       </div>
     </section>
+
     <aside class="note"><strong>مهم:</strong> أمثلة الصورة وتعديل واجهة الموقع والبحث في الريلز هي تطبيقات توضيحية للمحرّك نفسه. هذا هو <strong>البرومبت الواحد المشترك</strong> الذي يساعدك على إنشاء برومبتات مختلفة حسب ما تطلبه؛ وليس برومبتًا مخصّصًا لنوع واحد من المهام. الأداة تصوغ البرومبت ولا تنفّذ المهمة النهائية بنفسها.</aside>
   </main>
   <footer>
@@ -194,6 +368,46 @@
       event.currentTarget.setAttribute("aria-expanded",String(expanded));
       event.currentTarget.textContent = expanded ? "إخفاء التفاصيل ↑" : "عرض البرومبت كاملًا ↓";
     });
+
+    // Switch between animated walkthroughs; no app connection or automatic paste is implied.
+    const demoTabs = Array.from(document.querySelectorAll("[data-demo-tab]"));
+    const demoPanels = Array.from(document.querySelectorAll("[data-demo-panel]"));
+    const demoDetails = Array.from(document.querySelectorAll("[data-demo-detail]"));
+    function selectDemo(mode, replay = false) {
+      const chosen = demoPanels.find(p => p.dataset.demoPanel === mode);
+      if (!chosen) return;
+      demoTabs.forEach(tab => {
+        const selected = tab.dataset.demoTab === mode;
+        tab.setAttribute("aria-selected", String(selected));
+        tab.tabIndex = selected ? 0 : -1;
+      });
+      demoDetails.forEach(part => { part.hidden = part.dataset.demoDetail !== mode; });
+      demoPanels.forEach(part => {
+        part.hidden = part !== chosen;
+        part.classList.remove("is-active");
+      });
+      if (replay) void chosen.offsetWidth;
+      chosen.classList.add("is-active");
+    }
+    demoTabs.forEach((tab, index) => {
+      tab.addEventListener("click", () => selectDemo(tab.dataset.demoTab));
+      tab.addEventListener("keydown", event => {
+        let next = -1;
+        if (event.key === "ArrowLeft") next = (index + 1) % demoTabs.length;
+        if (event.key === "ArrowRight") next = (index - 1 + demoTabs.length) % demoTabs.length;
+        if (event.key === "Home") next = 0;
+        if (event.key === "End") next = demoTabs.length - 1;
+        if (next < 0) return;
+        event.preventDefault();
+        demoTabs[next].focus();
+        selectDemo(demoTabs[next].dataset.demoTab);
+      });
+    });
+    document.getElementById("demo-replay").addEventListener("click", () => {
+      const active = demoTabs.find(t => t.getAttribute("aria-selected") === "true");
+      if (active) selectDemo(active.dataset.demoTab, true);
+    });
+
   </script>
 </body>
 </html>
