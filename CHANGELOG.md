@@ -1,11 +1,14 @@
 # Changelog
 
-Notable user-facing changes to YourWordsToPrompt will be documented here.
-
 ## Unreleased
 
-- First public copy-and-paste adaptive Master Prompt.
-- Agent Skills-compatible packaging.
-- Quick start, examples, architecture notes, quality checklist, and community contribution files.
+### Correctness and specification alignment
+- Replaced the previously paraphrased compiler with the maintainer's **Sovereign Adaptive Compiler** as the authoritative source.
+- Added a missing closing Markdown code fence in the supplied Phase 2 output example; no behavioral requirements were intentionally changed.
+- Synchronized the Agent Skill with the full compiler instructions rather than a shortened reimplementation.
+- Aligned README, examples, how-it-works guide, quality checklist, contributing guidance, and roadmap with the canonical phases, diagnostic fields, question limit, pruning logic, domain rules, and completion format.
 
-No model-performance benchmarks or cross-provider compatibility tests have been published yet.
+## Initial public release
+- README, prompt-based quick start, illustrative examples, portable skill, and project contribution files.
+
+No formal model benchmarks or cross-provider verification have been published.

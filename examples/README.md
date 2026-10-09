@@ -1,89 +1,97 @@
-# Examples: everyday words → better prompts
+# Examples — everyday words to a lean Master Prompt
 
-These are **illustrative examples**, not automatic test outputs or benchmark claims. Real outputs can vary across models. The important distinction is *how much structure the task actually needs*.
+Examples are **illustrative**, not automatically generated or benchmarked. Each follows the two-phase output contract in the [official compiler](../prompts/MASTER_PROMPT.md). The compiler chooses **one path**: calibration when essential facts are missing, or direct compilation otherwise.
 
-## 1. Simple writing task — compile immediately
+## 1. Simple writing — no interrogation
 
-**Your words**
+**Your words:** "Write a polite email asking to reschedule Tuesday's meeting to Thursday."
 
-> Write a friendly email to my manager asking to move our Tuesday meeting to Thursday.
+**Illustrative compiler output:**
 
-**Illustrative Master Prompt**
+### 🚀 The Lean Master Prompt
 
-> Draft a short, friendly, professional email to my manager asking to reschedule our Tuesday meeting to Thursday. Make the request polite, avoid giving an invented reason, and include a subject line. Return only the email.
+```markdown
+Draft a short, polite email to my manager asking to move our Tuesday meeting to Thursday. Include a subject line and a friendly professional tone. Don't invent a reason for the change. Return just the email.
+```
 
-**Why:** The request is clear. Asking about five tone preferences would add friction.
+**Why:** Enough information already exists. A lengthy diagnosis would waste effort.
 
-## 2. A coding task — preserve the workflow
+## 2. Strategy with critical missing information — ask first
 
-**Your words**
+**Your words:** "Help me figure out whether my startup idea would work."
 
-> My React checkout form loses everything when there's an error. Fix it properly and add tests.
-
-**Illustrative Master Prompt**
-
-> Act as a senior React engineer. Inspect the existing checkout form, state-management approach, error handling, and test conventions. Identify why field values disappear after validation or submission failures. Implement the smallest robust fix while preserving entered values and avoiding regressions. Add tests covering validation failures, network failures, retries, and successful submission. Run the relevant test suite and report the root cause, files changed, and test results. Do not claim tests passed unless they ran.
-
-**Why:** The prompt calls for codebase inspection and verification. It does not invent files or a framework beyond React.
-
-## 3. A product idea — clarify the one blocker
-
-**Your words**
-
-> Help me figure out if my business idea would work.
-
-**Appropriate next response**
+**Illustrative compiler response:**
 
 ### 🛠️ Architectural Diagnosis
 - **Task & Complexity:** Strategy / Medium
 - **Secondary Task:** Research
-- **Activated Dimensions:** Domain, Audience, Output, Decision criteria
-- **Pruned:** Financial forecasting and investor-pitch production before the idea is defined
-- **Planned Prompt Sections:** Idea, target customer, validation approach, decision criteria
-- **Missing Critical Information:** What the business idea is
+- **Activated Dimensions:** Domain, Target Audience, Output Format
+- **Pruned:** Detailed financial forecasting and fundraising materials before the idea is defined
+- **Planned Prompt Sections:** Product idea, customer segment, validation method, decision criteria
+- **Missing Critical Information:** The actual idea and intended customer
 
 ### ❓ Calibration Questions
 
-What does your business do, and who do you expect would pay for it?
+What does the business offer, and who is the intended customer?
 
-**Why:** A business idea cannot be validated without knowing what it is. The assistant should not fabricate an industry.
+**Why:** This is a true blocker. Once the answer arrives, the compiler should stop asking and produce one final prompt.
 
-## 4. A visual-only website audit — honor the boundary
+## 3. Coding — inspect, plan, verify
 
-**Your words**
+**Your words:** "My React checkout form clears itself after validation errors. Fix it and test it."
 
-> I want an expert to check my website's UI design before launch, every screen, even for people who aren't good with technology. No backend review.
+**Illustrative compiler output:**
 
-**Illustrative Master Prompt**
+### 🚀 The Lean Master Prompt
 
-> Act as a senior UI designer reviewing a pre-launch website. Inspect every accessible page, important UI state, and responsive layout. Evaluate visual hierarchy, typography, spacing, color and contrast, consistency, affordances, accessibility, and comprehension for both technically confident and low-tech users. Report issues page-by-page with evidence, severity, and specific visual recommendations. Separate confirmed observations from areas you could not access. Focus **only on interface design**; do not expand the work into backend architecture or product strategy. If the website URL is unavailable, request it before performing the review.
+```markdown
+Act as a senior React engineer. Inspect the existing checkout code, validation logic, state management, and test setup. Identify why values disappear after validation errors. Outline a concise plan and any assumptions or regression risks, then implement the smallest safe fix. Test validation failures, retries, and successful submission using the repository's test conventions. Report the cause, changes, and real test results; never claim tests passed if they were not run. Before any major changes, request approval.
+```
 
-**Why:** Visual-design scope is explicitly preserved.
+**Why:** Codebase inspection and testing matter. Invented file paths would not.
 
-## 5. Research task — request evidence, not certainty
+## 4. Visual-only UI/UX — honor scope
 
-**Your words**
+**Your words:** "Check the visual design of all pages on my beta website for both beginners and tech-savvy people. Not backend."
 
-> Compare the best ways to fund a small AI startup in the Gulf.
+**Illustrative compiler output:**
 
-**Illustrative Master Prompt**
+### 🚀 The Lean Master Prompt
 
-> Act as a startup funding researcher. Research relevant accelerators, grants, startup programs, and angel/VC pathways for an early-stage AI startup seeking opportunities in GCC countries. Use current primary sources where available. For each opportunity, compare eligibility, geographic and incorporation requirements, funding terms, deadlines, stage fit, and application process. Distinguish verified requirements from interpretations or unknowns. Finish with a prioritized shortlist and concrete next steps. Do not invent open calls, deadlines, or funding amounts.
+```markdown
+Act as a senior UI designer. Audit the visual design of all accessible pages and important interface states in my beta website. Assess visual hierarchy, typography, spacing, color, consistency, clarity, usability for novice and experienced users, and accessibility/responsive details where they affect the design. Report specific issues page by page with severity, evidence, and concrete design improvements. Identify pages you cannot access; do not invent findings. Exclude backend, security, and infrastructure work. Ask for the website URL only if you need it to start the actual audit.
+```
 
-**Why:** Funding criteria change, so the execution prompt explicitly asks for verification.
+**Why:** A visual-only request should not expand into unrelated development.
 
-## 6. High-impact infrastructure change — include a checkpoint
+## 5. Research — clarify evidence standards
 
-**Your words**
+**Your words:** "Compare the most relevant startup funding options for an AI startup in Gulf countries."
 
-> Migrate our production Postgres database to a new provider without downtime.
+**Illustrative compiler output:**
 
-**Illustrative Master Prompt**
+### 🚀 The Lean Master Prompt
 
-> Act as a senior database reliability engineer. First inspect the current topology, data volume, replication options, dependencies, backup strategy, and rollback constraints. Propose a migration plan addressing data integrity, replication/cutover, observability, rehearsal, rollback, and verification. Identify assumptions and risks. **Do not change production systems or execute a cutover until the plan is reviewed and approved.** When authorized, execute only the approved steps and provide verification results.
+```markdown
+Act as a startup funding researcher. Compare grants, accelerators, investment programs, and other appropriate early-stage AI startup funding options in GCC countries. Prioritize relevance to an early-stage startup and eligibility for applicants without an established Gulf entity where applicable. Verify current requirements, application dates, incorporation constraints, funding terms, and stages using credible primary sources. Distinguish confirmed details from unknowns. Return a concise comparison table, a prioritized shortlist with rationale, and application next steps. Do not invent deadlines or award amounts.
+```
 
-**Why:** Safety and review add value here but would be unnecessary for the simple email example.
+**Why:** Research claims and eligibility conditions need evidence; this is not a generic writing prompt.
+
+## 6. High-impact coding — propose a plan, wait for approval
+
+**Your words:** "Migrate our production Postgres database to a new provider without downtime."
+
+**Illustrative compiler output:**
+
+### 🚀 The Lean Master Prompt
+
+```markdown
+Act as a senior database reliability engineer. Inspect the current production Postgres topology, replication support, size, dependencies, backup process, and recovery constraints. Propose a concise migration plan covering rehearsal, data consistency, monitoring, cutover, rollback, and verification. Explicitly identify risks, assumptions, and any conditions that make zero downtime unrealistic. Present the plan and WAIT FOR APPROVAL before executing any major or production-changing steps. Once authorized, follow only the approved plan and report verification outcomes.
+```
+
+**Why:** High-impact changes require explicit review instead of blind execution.
 
 ---
 
-Have a better example? Please contribute one with a **raw request**, a **representative compiled prompt or clarification**, and a short explanation of the adaptation. Remove personal data and secrets before sharing.
+See [how the compiler chooses instructions](../docs/how-it-works.md). To contribute a new example, supply a privacy-safe raw request, the illustrative response, and a brief rationale. Do not present hypothetical outputs as measured test results.

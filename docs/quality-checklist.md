@@ -1,43 +1,37 @@
-# Prompt quality checklist
+# Compiler conformance and quality checklist
 
-Use this checklist when reviewing changes or comparing generated prompts. This is a **manual evaluation guide**, not evidence of benchmark superiority.
+Use this for **manual checks and reproducible experiments**, not as evidence of benchmark superiority. The authority for behavior is [the official Master Prompt](../prompts/MASTER_PROMPT.md).
 
-## Before judging the output
+## Structural conformance
 
-Record the raw user request, model name/version if known, relevant earlier context, any clarification answers, and the generated prompt. Never publish private data or credentials.
+For each sample, verify:
 
-## Evaluation questions
+- [ ] The primary task family is one of Coding, UI/UX, Research, Writing, Strategy, Operations, Analysis, General.
+- [ ] Task complexity is assessed independently of the domain.
+- [ ] A secondary task family is used only when beneficial.
+- [ ] Irrelevant cognitive dimensions, risk sections, assumptions, file lists, and plans are pruned.
+- [ ] When essential information is missing, the response uses exactly **Architectural Diagnosis** with the six required fields and **Calibration Questions**.
+- [ ] Questions are limited to **1–3 high-value grouped items**, with no more than one extra clarification round.
+- [ ] Once information suffices, the response uses exactly `### 🚀 The Lean Master Prompt` and **one fenced markdown block**.
+- [ ] No internal dimension selection or pruning analysis appears in the compiled final prompt.
+- [ ] High-impact coding includes a review-and-approval checkpoint.
+- [ ] The generated prompt does not invent files, access, facts, tests, sources, or credentials.
 
-Rate each criterion **Pass / Partial / Fail** and add a concrete observation.
+## Quality ratings
 
-| Criterion | Question |
-| --- | --- |
-| Intent | Does the prompt preserve what the user actually wants? |
-| Specificity | Can an executing assistant act without guessing at essentials? |
-| Relevance | Is every requested section or constraint needed for this task? |
-| Efficiency | Could the prompt be shorter without harming execution? |
-| Questions | Were questions limited to information that materially changes the result? |
-| Domain fit | Are technical, design, research, or writing needs handled appropriately? |
-| Honesty | Does the prompt avoid fabricated sources, access, tests, and facts? |
-| Safety | Are meaningful risks given checks or approval gates when relevant? |
-| Output | Is the requested deliverable or format clear? |
-| Portability | Can the prompt be pasted and understood without hidden dependencies? |
+Record **Pass / Partial / Fail** with concrete evidence for: intent fidelity, missing information handling, relevance, brevity, domain fit, execution-readiness, risks, and output format.
 
-## Minimum smoke-test set
+## Minimum exploratory inputs
 
-Run the compiler in a fresh AI chat for each input:
+1. "Write a polite reminder about an unpaid invoice." → Simple Writing: compile directly.
+2. "Suggest a three-ingredient lunch with eggs and rice." → Simple General: no unnecessary sections.
+3. "Tell me if my startup idea will succeed." → Strategy: ask what the idea is.
+4. "Evaluate only my website's visual design." → UI/UX: no unrelated backend scope.
+5. "Fix a failing test in my Python repo." → Coding: refer to actual repo inspection, don't invent the failure.
+6. "Move our production database with no downtime." → Complex Coding: propose plan and require approval.
+7. "Find current AI startup grants in the Gulf." → Research: require reliable, current evidence.
+8. "Merge two training courses using existing videos and questions." → Strategy/Analysis: have the executing agent review course materials before planning changes.
 
-1. "Write a friendly reminder to pay an invoice." — should compile directly.
-2. "Give me a recipe for four people using rice and eggs." — should stay simple.
-3. "Validate my startup idea." — should ask what the idea is before assuming details.
-4. "Review my homepage visuals, not the backend." — should preserve visual-only scope.
-5. "Fix the failing tests in my Next.js project." — should ask the executing agent to inspect actual errors and files, not invent a cause.
-6. "Migrate production data without downtime." — should request a plan, risk mitigation, and approval before major changes.
-7. "Research current funding for early-stage founders in the Gulf." — should require up-to-date evidence and clear eligibility criteria.
-8. "Merge my two courses using videos and quizzes." — should ask the executing agent to inspect course materials and preserve alignment.
+## Testing notes
 
-If a model response differs, document that observation. Do not label example prompts as validated test results unless they were actually tested.
-
-## Suggested comparison method
-
-Compare the same raw input using a generic rewrite instruction and YourWordsToPrompt, keeping model and relevant context as comparable as practical. Use the checklist above, retain both outputs, and identify tradeoffs. Report failures too; do not claim a measured advantage without reproducible evidence.
+Save the input, relevant conversation context, output, model/version and date (if known), and explicit limitations. Compare like-for-like cases; report failures as well as strengths. Do not publish private information or make performance claims without evidence.

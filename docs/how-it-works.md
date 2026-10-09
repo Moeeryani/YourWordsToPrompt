@@ -1,56 +1,62 @@
 # How YourWordsToPrompt works
 
-YourWordsToPrompt is an **instruction set** for a conversational AI model. It converts a user's everyday request into a new prompt the user can reuse. It does not run a hosted service or perform the requested work by itself.
+This document **explains** the original specification; it does not replace or override [the authoritative compiler](../prompts/MASTER_PROMPT.md).
 
-## The adaptation loop
+## The compiler's core promise
 
-1. **Understand the task.** Identify the primary task family (coding, UI/UX, research, writing, strategy, operations, analysis, or general).
-2. **Measure complexity separately.** A technically sophisticated topic may still require a simple prompt; a seemingly ordinary task may have significant risks.
-3. **Select only useful instructions.** Include scope, role, constraints, process, output, or checks when they improve the result. Remove everything else.
-4. **Check for real blockers.** If one key detail is missing, ask for it. If the task can be compiled without guessing, compile immediately.
-5. **Produce one executable prompt.** The user receives a clear Master Prompt rather than a collection of interchangeable templates.
+Turn a natural-language idea into **one lean, high-performance Master Prompt**. Avoid universal templates, unnecessary dimensions, and redundant instructions. Structure scales with **domain, complexity, ambiguity, and execution risk**.
 
-## Two response paths
+The prompt compiler itself does not execute the task or create tools/permissions that are not actually available.
 
-**Enough information → compilation**
+## Task routing and complexity
 
-Example request: "Write a polite note asking my instructor for the course syllabus."
+**Primary task families:** Coding, UI/UX, Research, Writing, Strategy, Operations, Analysis, General. A secondary family is optional and only improves the compiled prompt when materially relevant.
 
-The compiler should produce a short writing prompt immediately, without asking the user for a full communication strategy.
+Complexity is assessed **independently**:
+- **Simple:** clear goal, low risk, minimal dependencies → concise direct compilation.
+- **Medium:** needs context or tradeoff management → appropriate structure.
+- **Complex:** multiple steps, significant ambiguity, dependencies, or risk → targeted planning and safeguards.
 
-**Critical information missing → targeted questions**
+The compiler selectively chooses among Level, Function, Domain, Thinking Style, Authority, Operating Mode, Behavior, Output Format, Target Audience, and Relationship to User. These are **internal tools**, not a required questionnaire or mandatory output headings.
 
-Example request: "Evaluate my idea's market fit."
+## Phase 1 — Triage & Interrogation
 
-The compiler cannot evaluate an unspecified idea. It should ask what the idea is and who might use or buy it, then compile once answered.
+Every new idea is assessed for task type, complexity, high-value dimensions, and unnecessary elements. Ask questions **only when critical information is missing**.
 
-Clarification is limited to up to three focused questions per round, with one optional additional short round for remaining blockers.
+- At most **three targeted, grouped questions** in one round.
+- At most **one additional short round** for unresolved critical gaps.
+- Stop questioning once enough information exists.
 
-## Complexity is not length
+If blocked, output the **exact** six-field `### 🛠️ Architectural Diagnosis` followed by `### ❓ Calibration Questions`. Do not substitute an unstructured chat response or ask for optional preferences.
 
-The goal is not to maximize output tokens. A high-quality short prompt can be better than a massive generic template if it is appropriate to the task.
+## Phase 2 — Compilation
 
-- For **simple** requests, make the goal and output explicit.
-- For **medium** requests, capture constraints and important tradeoffs.
-- For **complex or high-impact** requests, add sequencing, verification, assumptions, and approval gates when appropriate.
+When information is sufficient, output **only**:
 
-## Domain sensitivity
+```text
+### 🚀 The Lean Master Prompt
+```
 
-- Coding prompts may need repository inspection, tests, and review before critical changes.
-- Design prompts may need accessibility, user journeys, and responsive-state checks.
-- Research prompts may need reliable sources and explicit uncertainty.
-- Writing prompts usually need reader, purpose, tone, and format.
-- Strategy prompts benefit from decision criteria and tradeoffs.
+followed by **one fenced `markdown` code block** containing the Master Prompt. Do not reveal internal dimensions or pruning decisions in this phase.
 
-These are **options**, never mandatory universal sections.
+## Selective domain behavior
 
-## What the compiler cannot guarantee
+- **Coding:** Simple coding gets a direct prompt. Medium/complex coding calls for examining the codebase, a concise plan, assumptions, risks, and then action as appropriate. High-impact changes must wait for approval after the plan. The specification's final-output example also calls for a complex coding prompt to request approval before major changes.
+- **UI/UX:** User flows, hierarchy, accessibility, responsiveness, and existing patterns are included **only when relevant**. Conceptual design is not forced into implementation detail.
+- **Research:** Clarify objective, scope, market/audience, constraints, method, and output format if useful. Caveats matter when uncertainty or source quality is material.
+- **Writing:** Prioritize purpose, audience, tone, constraints, sources, and format—not technical sections.
+- **Strategy / Analysis / Operations:** Prioritize objective, decision context, tradeoffs, criteria, process logic, and a useful deliverable.
 
-Language models may misunderstand requests, vary by provider, or ask a question the user considers unnecessary. The compiler does not grant browsing, repository access, or execution permissions. Always review the final prompt before using it for consequential tasks.
+## Pruning
 
-## Keep the two distributions aligned
+Add the following only when they materially improve execution: files/areas to touch, risks, assumptions, accessibility, definition of done, or breakdown/plan. Do not mechanically include them all.
 
-- The maintained **copy-and-paste** instruction set lives in **prompts/MASTER_PROMPT.md**.
-- The **skills/your-words-to-prompt/SKILL.md** file is a compact, independently usable adaptation following the Agent Skills format.
+## Source consistency
 
-When editing behaviors, check both files and update examples when appropriate.
+The **authoritative source** is [`prompts/MASTER_PROMPT.md`](../prompts/MASTER_PROMPT.md); the [Agent Skill](../skills/your-words-to-prompt/SKILL.md) contains the same instruction text with skill metadata. Review both when editing either one.
+
+The original pasted source omitted the closing backticks after the Phase 2 output example. A single closing Markdown fence was supplied in the published copy to keep `</INTERACTION_PROTOCOL>` and the final behavior rules outside the example.
+
+## What remains unverified
+
+Model-by-model reliability, user-study effectiveness, benchmarks, and installation on particular skill clients have not been validated by this repository.

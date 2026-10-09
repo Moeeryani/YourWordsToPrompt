@@ -2,98 +2,119 @@
 
 # YourWordsToPrompt
 
-### Your words. A better AI prompt.
+### Write what you want. Get the AI prompt you need.
 
-**Write what you want in everyday language. Get a clear, ready-to-use prompt tailored to your task.**
+**Turn everyday words or a rough idea into one clear, ready-to-use Master Prompt.**
 
-No prompt-engineering experience. No bloated templates. No unnecessary questions.
+No prompt engineering knowledge. No generic mega-templates. Only questions that matter.
 
-**[Get started](#get-started-in-30-seconds)** · **[See examples](examples/README.md)** · **[How it works](docs/how-it-works.md)**
+**[Get started](#quick-start)** · **[See transformations](examples/README.md)** · **[Read the original compiler](prompts/MASTER_PROMPT.md)**
 
 </div>
 
 ---
 
-![Everyday words become a ready-to-use prompt through adaptive compilation](assets/flow.svg)
+![Your words become a tailored AI prompt](assets/flow.svg)
 
-## From your words to a useful prompt
+## What does it do?
 
-| Your words | YourWordsToPrompt helps you create |
-| --- | --- |
-| "I have an app idea. Help me figure out whether people would use it." | A focused validation prompt covering target users, assumptions, research, and decision criteria. |
-| "Check my website's design before launch. Be really critical." | A UI/UX audit prompt with scope, user perspectives, evaluation criteria, and prioritized findings. |
-| "Help me write an email asking for an extension, but make it polite." | A concise writing prompt with audience, intent, tone, and output format. |
-
-**One input style, different levels of detail.** A simple request gets a simple prompt. A high-stakes or complex request gets the structure it actually needs.
-
-## Get started in 30 seconds
-
-You don't need to install anything or run code.
-
-1. **Open the [Master Prompt](prompts/MASTER_PROMPT.md)** and copy its contents.
-2. **Paste it into ChatGPT, Claude, or another AI assistant** as project/custom instructions, or as the first message in a new chat if your assistant doesn't support custom instructions.
-3. **Write your idea normally.** For example: `I want to launch an online bakery but I don't know where to start.`
-4. **Get your ready-to-use prompt.** If an essential detail is missing, the assistant asks a small number of focused questions first.
-5. **Copy the generated prompt into your preferred AI assistant** to perform the actual task.
-
-> **Important:** This repository currently provides instructions for an AI assistant—not a hosted prompt-conversion website. Outputs vary by model and context.
-
-### The idea in one line
+You describe your goal in plain language. **YourWordsToPrompt** follows the **Sovereign Adaptive Compiler** to choose the right task type, assess complexity, omit irrelevant sections, and produce a task-specific Master Prompt you can paste into an AI assistant.
 
 ```text
-Your everyday words → Understand the task → Ask only if necessary → Ready-to-use AI prompt
+Your words → Task + complexity → Only essential questions (if needed) → One tailored Master Prompt
 ```
 
-## What makes it adaptive?
+It helps you **write a prompt**; it does not execute that prompt or host a prompt-generation website.
 
-| Your request | What the compiler does |
+## Quick start
+
+1. Open **[the official Master Prompt](prompts/MASTER_PROMPT.md)**.
+2. Copy **only the text inside the large code block**, from `<SYSTEM_ARCHITECTURE>` through `</FINAL_BEHAVIOR_RULES>`. Do not copy the introductory GitHub instructions.
+3. Paste it as custom/project instructions into ChatGPT or another compatible AI assistant, or use it as the first chat message.
+4. Describe what you want normally: `I want to create a marketing plan for my new bakery.`
+5. **If enough information is given**, receive one Master Prompt immediately. **If something critical is missing**, answer up to three focused calibration questions first.
+6. Copy the resulting **Lean Master Prompt** into the AI assistant you want to perform the actual task.
+
+> The exact responses depend on the model and context. No model benchmark or universal compatibility guarantee is implied.
+
+## Two possible responses
+
+<details>
+<summary><strong>Example A: Clear request → one Master Prompt</strong></summary>
+
+**You type:**
+
+> Write a polite email to reschedule Tuesday's meeting to Thursday.
+
+**Illustrative output:**
+
+### 🚀 The Lean Master Prompt
+
+```markdown
+Draft a brief, professional, friendly email asking to move Tuesday's meeting to Thursday. Include a subject line, use a polite tone, and do not invent an explanation for the change. Return only the email.
+```
+
+</details>
+
+<details>
+<summary><strong>Example B: Missing critical information → targeted questions</strong></summary>
+
+**You type:**
+
+> Help me validate my startup idea.
+
+**Illustrative response:**
+
+### 🛠️ Architectural Diagnosis
+- **Task & Complexity:** Strategy / Medium
+- **Secondary Task:** Research
+- **Activated Dimensions:** Domain, Target Audience, Output Format
+- **Pruned:** Detailed financial modeling and pitch-deck creation before the idea is known
+- **Planned Prompt Sections:** Idea and audience, validation questions, evidence, decision criteria
+- **Missing Critical Information:** What the startup idea does and who it serves
+
+### ❓ Calibration Questions
+
+What is the product or service, and who would use or pay for it?
+
+Once you answer, the compiler produces the Master Prompt.
+
+</details>
+
+## Why it's adaptive
+
+| Feature | How the original Sovereign Adaptive Compiler behaves |
 | --- | --- |
-| **Simple and clear** | Writes one short, useful prompt immediately. |
-| **Important details missing** | Asks up to three targeted questions, rather than a lengthy questionnaire. |
-| **Complex or high-impact** | Includes relevant constraints, planning, deliverables, and safeguards. |
-| **Different domains** | Adapts to coding, UI/UX, research, writing, strategy, analysis, and operations. |
+| **Task routing** | Coding, UI/UX, Research, Writing, Strategy, Operations, Analysis, General |
+| **Independent complexity assessment** | Simple, Medium, or Complex, regardless of domain |
+| **Ruthless pruning** | No redundant sections, unnecessary dimensions, or universal templates |
+| **Targeted questions** | Maximum three questions in one round; one additional round only if critical gaps remain |
+| **Domain-specific rules** | Appropriate guidance for coding, design, research, writing, strategy, operations, and analysis |
+| **Strict outputs** | Architectural Diagnosis + Calibration Questions when blocked; otherwise exactly one Lean Master Prompt |
+| **High-impact coding safeguards** | Plan and flag risks; wait for approval before major changes where required |
 
-The goal is **not** to make every prompt longer. The goal is to make every instruction earn its place.
+**Short when simple. Structured when necessary.**
 
-## Ways to use it
+## Install / use
 
-- **Copy and paste:** Use [the complete Master Prompt](prompts/MASTER_PROMPT.md) in any compatible conversational AI.
-- **As an agent skill:** See [`skills/your-words-to-prompt/SKILL.md`](skills/your-words-to-prompt/SKILL.md), packaged using the [Agent Skills format](https://agentskills.io/specification). Installation depends on the agent you use.
-- **Learn by example:** Explore [realistic transformations](examples/README.md), including when the assistant should ask questions instead of guessing.
+- **No installation:** [Copy the official Master Prompt](prompts/MASTER_PROMPT.md) into your AI assistant.
+- **Agent Skill:** [`skills/your-words-to-prompt/SKILL.md`](skills/your-words-to-prompt/SKILL.md) holds the full instruction set with skill metadata, for agents that support the [Agent Skills specification](https://agentskills.io/specification). Client-specific installation is not yet verified.
+- **Examples:** [Explore prompts and calibration examples](examples/README.md).
 
-## Example: a UI/UX audit
+## Repository guide
 
-**You say:**
-
-> I built a website. I want someone to review all the design and tell me what looks unprofessional before beta launch.
-
-**An illustrative compiled prompt:**
-
-> Act as a senior product and UI/UX designer. Review the website's visual design across every accessible page and responsive breakpoint. Assess hierarchy, typography, consistency, spacing, navigation clarity, forms, feedback states, accessibility, and first-time usability. Consider both confident and low-tech users. Identify specific problems, explain their impact, and recommend concrete improvements. Prioritize findings by severity and show the affected page or component. Do not invent observations for pages you cannot access.
-
-For a website audit, an assistant may first ask for the website URL if it is needed and unavailable. **[See more examples →](examples/README.md)**
-
-## Project files
-
-| File | Purpose |
+| Location | Purpose |
 | --- | --- |
-| [`prompts/MASTER_PROMPT.md`](prompts/MASTER_PROMPT.md) | The copy-and-paste prompt; primary behavioral reference. |
-| [`skills/your-words-to-prompt/SKILL.md`](skills/your-words-to-prompt/SKILL.md) | A portable skill adaptation for compatible agents. |
-| [`examples/README.md`](examples/README.md) | Simple, ambiguous, and complex sample transformations. |
-| [`docs/how-it-works.md`](docs/how-it-works.md) | Design decisions and the two possible response flows. |
-| [`docs/quality-checklist.md`](docs/quality-checklist.md) | A transparent way to evaluate generated prompts. |
-| [`ROADMAP.md`](ROADMAP.md) | Planned improvements, not shipped features. |
+| [`prompts/MASTER_PROMPT.md`](prompts/MASTER_PROMPT.md) | **Authoritative specification supplied by the maintainer** |
+| [`skills/your-words-to-prompt/SKILL.md`](skills/your-words-to-prompt/SKILL.md) | Same rules packaged as an agent skill |
+| [`examples/README.md`](examples/README.md) | Worked, illustrative interactions |
+| [`docs/how-it-works.md`](docs/how-it-works.md) | Explanation of the task router, phases, and pruning |
+| [`docs/quality-checklist.md`](docs/quality-checklist.md) | Review criteria and testing scenarios |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | How to propose improvements without changing the contract accidentally |
+| [`ROADMAP.md`](ROADMAP.md) | Future possibilities (not shipped features) |
 
-## What it does *not* do
+## Limitations and contribution
 
-YourWordsToPrompt does not guarantee better model performance for every task, conduct research on its own, deploy code, or magically execute the generated prompt. It is an **adaptive prompt compiler**: it helps you tell an AI assistant what you want with less effort. Treat examples as illustrations, not measured benchmark results.
+This is a **prompt-based tool**, not a benchmark-proven optimizer, web app, or autonomous executor. Always review the generated prompt before using it on consequential work. [Report behavior issues or suggest examples](https://github.com/Moeeryani/YourWordsToPrompt/issues) without sharing personal information or credentials.
 
-## Contributing
-
-Issues, examples, documentation improvements, accessibility feedback, and model-specific compatibility reports are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md). Please don't include private chat logs, credentials, or confidential prompts in public issues.
-
-If this project helps you explain what you want to AI more clearly, consider ⭐ starring the repository so others can discover it.
-
-## License
-
-[MIT](LICENSE) © 2026 Moeeryani.
+Contributions are welcome under the [MIT license](LICENSE). If it helps you explain your ideas to AI, consider ⭐ starring the repository.

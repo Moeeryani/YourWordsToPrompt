@@ -1,42 +1,36 @@
 # Contributing to YourWordsToPrompt
 
-Thanks for helping make prompt creation simpler and more useful.
+Thank you for helping make plain-language prompt creation accessible.
 
-## Good contributions
+## Most valuable contributions
 
-- Clearer beginner onboarding or more accessible documentation.
-- Realistic raw-request → compiled-prompt examples.
-- Reports of prompts that are too long, ask unnecessary questions, or miss important details.
-- Improvements to domain-specific behavior or multilingual phrasing.
-- Compatibility notes based on actual tests with a named AI assistant.
+- Beginner-friendly examples covering simple, ambiguous, and complex requests.
+- Issues demonstrating missing intent, unnecessary questions, or template bloat.
+- Documentation, accessibility, and language improvements.
+- Reproducible conformance reports using [the quality checklist](docs/quality-checklist.md).
 
-Please do not submit confidential prompts, personal data, passwords, private URLs, or API keys.
+Never include private chat logs, user data, passwords, or API keys in public submissions.
 
-## Before changing the compiler
+## Source of truth — please read before editing
 
-1. Read **prompts/MASTER_PROMPT.md** and **docs/how-it-works.md**.
-2. Explain the user problem and what is currently going wrong.
-3. Make a targeted change rather than adding a universal template.
-4. Compare behavior on at least one **simple**, one **ambiguous**, and one **complex** request.
-5. Keep **skills/your-words-to-prompt/SKILL.md** behaviorally aligned when changing core rules.
-6. Describe what you actually tested and what remains unverified.
+[`prompts/MASTER_PROMPT.md`](prompts/MASTER_PROMPT.md) contains the **maintainer-supplied Sovereign Adaptive Compiler** and is the project's authoritative specification.
 
-Use **docs/quality-checklist.md** for review criteria.
+Changes to its architecture, dimensions, routing, complexity model, pruning, domain rules, phases, output contracts, or final behavior are **product decisions**—propose them in an issue first. Don't quietly rewrite them while simplifying documentation.
+
+[`skills/your-words-to-prompt/SKILL.md`](skills/your-words-to-prompt/SKILL.md) must remain behaviorally identical to the authoritative instructions apart from its skill metadata and short packaging notes.
+
+For documentation/example pull requests:
+1. Preserve the distinction between **calibration** and **compilation**.
+2. Use the **exact response headings** and six diagnostic fields.
+3. Respect the **1–3 question** limit and **one optional additional round**.
+4. Avoid unnecessary sections; mirror domain-specific behaviors.
+5. Add concrete, privacy-safe before/after examples.
+6. Disclose tests actually performed; don't claim model-independent guarantees.
 
 ## Pull requests
 
-- Keep one main purpose per pull request.
-- Link a relevant issue when available.
-- Explain the before/after behavior using a privacy-safe example.
-- Prefer reproducible examples over anecdotal superiority claims.
-- Be respectful in discussion; see **CODE_OF_CONDUCT.md**.
+Explain the user problem, show before/after behavior, and reference relevant files. Keep changes focused and follow [the Code of Conduct](CODE_OF_CONDUCT.md).
 
-## Reporting issues
+## Issue reports
 
-Use the repository's issue templates. Include:
-- What you asked in everyday language.
-- What you expected the compiler to do.
-- What actually happened (remove private information).
-- Which AI model or interface you tested, if known.
-
-You do not need to know prompt-engineering terminology to contribute.
+Include the raw request (redacted), desired behavior, actual response, and model/client version when known. You don't need prompt-engineering expertise to contribute.
