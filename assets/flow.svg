@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="220" viewBox="0 0 940 220" role="img" aria-labelledby="title desc">
+  <title id="title">Your words become a tailored AI prompt</title>
+  <desc id="desc">A three-stage flow: Your words, Adaptive compiler, Ready-to-use prompt.</desc>
+  <rect width="940" height="220" rx="24" fill="#0d1526"/>
+  <rect x="28" y="46" width="245" height="114" rx="18" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+  <text x="150" y="94" text-anchor="middle" fill="#f8fafc" font-family="Arial,sans-serif" font-size="26" font-weight="700">Your words</text>
+  <text x="150" y="121" text-anchor="middle" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="15">Write naturally</text>
+  <path d="M285 103 H316" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round"/>
+  <path d="M308 95 L317 103 L308 111" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="331" y="46" width="278" height="114" rx="18" fill="#312e81" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="470" y="91" text-anchor="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="24" font-weight="700">Adaptive compiler</text>
+  <text x="470" y="121" text-anchor="middle" fill="#c7d2fe" font-family="Arial,sans-serif" font-size="15">Only what your task needs</text>
+  <path d="M621 103 H652" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round"/>
+  <path d="M644 95 L653 103 L644 111" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="667" y="46" width="245" height="114" rx="18" fill="#123c3a" stroke="#34d399" stroke-width="1.5"/>
+  <text x="789" y="91" text-anchor="middle" fill="#ecfdf5" font-family="Arial,sans-serif" font-size="24" font-weight="700">Your AI prompt</text>
+  <text x="789" y="121" text-anchor="middle" fill="#a7f3d0" font-family="Arial,sans-serif" font-size="15">Copy. Paste. Use.</text>
+  <text x="470" y="194" text-anchor="middle" fill="#94a3b8" font-family="Arial,sans-serif" font-size="15">Simple requests stay simple. Complex tasks get structure.</text>
+</svg>

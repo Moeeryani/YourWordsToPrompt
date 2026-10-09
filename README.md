@@ -14,6 +14,8 @@ No prompt-engineering experience. No bloated templates. No unnecessary questions
 
 ---
 
+![Everyday words become a ready-to-use prompt through adaptive compilation](assets/flow.svg)
+
 ## From your words to a useful prompt
 
 | Your words | YourWordsToPrompt helps you create |
