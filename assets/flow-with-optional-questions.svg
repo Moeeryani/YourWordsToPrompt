@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="940" height="308" viewBox="0 0 940 308" role="img" aria-labelledby="title desc">
+  <title id="title">Your words become a tailored AI prompt, with optional clarifying questions</title>
+  <desc id="desc">Your words flow to the Adaptive compiler, then to Your AI prompt. When important details are missing, the compiler may ask one or two related questions to better tailor the prompt. Clear requests proceed without questions.</desc>
+  <rect width="940" height="308" rx="24" fill="#0d1526"/>
+  <rect x="28" y="37" width="245" height="114" rx="18" fill="#1e293b" stroke="#64748b" stroke-width="1.5"/>
+  <text x="150" y="85" text-anchor="middle" fill="#f8fafc" font-family="Arial,sans-serif" font-size="26" font-weight="700">Your words</text>
+  <text x="150" y="112" text-anchor="middle" fill="#cbd5e1" font-family="Arial,sans-serif" font-size="15">Write naturally</text>
+  <path d="M285 94 H316" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round"/>
+  <path d="M308 86 L317 94 L308 102" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="331" y="37" width="278" height="114" rx="18" fill="#312e81" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="470" y="82" text-anchor="middle" fill="#ffffff" font-family="Arial,sans-serif" font-size="24" font-weight="700">Adaptive compiler</text>
+  <text x="470" y="112" text-anchor="middle" fill="#c7d2fe" font-family="Arial,sans-serif" font-size="15">Only what your task needs</text>
+  <path d="M621 94 H652" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round"/>
+  <path d="M644 86 L653 94 L644 102" fill="none" stroke="#a5b4fc" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="667" y="37" width="245" height="114" rx="18" fill="#123c3a" stroke="#34d399" stroke-width="1.5"/>
+  <text x="789" y="82" text-anchor="middle" fill="#ecfdf5" font-family="Arial,sans-serif" font-size="24" font-weight="700">Your AI prompt</text>
+  <text x="789" y="112" text-anchor="middle" fill="#a7f3d0" font-family="Arial,sans-serif" font-size="15">Copy. Paste. Use.</text>
+
+  <!-- Optional clarification loop: never a mandatory step -->
+  <path d="M417 151 V181" stroke="#a5b4fc" stroke-width="2" stroke-dasharray="5 6" stroke-linecap="round"/>
+  <path d="M523 181 V151" stroke="#a5b4fc" stroke-width="2" stroke-dasharray="5 6" stroke-linecap="round"/>
+  <path d="M517 160 L523 151 L529 160" fill="none" stroke="#a5b4fc" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="274" y="181" width="392" height="65" rx="16" fill="#202950" stroke="#818cf8" stroke-width="1.5"/>
+  <text x="470" y="208" text-anchor="middle" fill="#f8fafc" font-family="Arial,sans-serif" font-size="19" font-weight="700">May ask 1–2 related questions</text>
+  <text x="470" y="230" text-anchor="middle" fill="#c7d2fe" font-family="Arial,sans-serif" font-size="14">Only if needed to make your prompt better</text>
+  <text x="470" y="280" text-anchor="middle" fill="#94a3b8" font-family="Arial,sans-serif" font-size="15">Simple requests stay simple. Complex tasks get structure.</text>
+</svg>

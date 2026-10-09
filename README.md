@@ -14,7 +14,7 @@ No prompt engineering knowledge. No generic mega-templates. Only questions that 
 
 ---
 
-![Your everyday words become an AI prompt, with optional related questions](assets/flow.svg)
+![Your everyday words become an AI prompt, with optional related questions](assets/flow-with-optional-questions.svg)
 
 *If something important is missing, the compiler may ask 1–2 focused questions to make the prompt fit what you want. Simple requests need no questions. The official specification permits up to three questions per round when necessary.*
 
