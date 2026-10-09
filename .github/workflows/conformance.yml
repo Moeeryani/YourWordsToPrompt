@@ -1,0 +1,28 @@
+name: Compiler conformance
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  offline-conformance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run positive and negative checker unit tests
+        run: python3 -m unittest discover -s tests -v
+      - name: Validate twelve reference outputs and canonical prompt
+        run: python3 scripts/check_conformance.py --json-report conformance-report.json
+      - name: Upload offline machine-readable report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: offline-conformance-report
+          path: conformance-report.json
+          if-no-files-found: ignore

@@ -1,0 +1,212 @@
+{
+  "schema_version": 1,
+  "description": "Twelve reusable, manually authored compiler conformance scenarios; not live model results.",
+  "cases": [
+    {
+      "id": "01-simple-writing",
+      "domain": "Writing",
+      "complexity": "Simple",
+      "phase": "compile",
+      "input": "Write a polite email to my manager to move our Tuesday meeting to Thursday.",
+      "context": [],
+      "check_patterns": [
+        "\\b(email|message)\\b",
+        "\\b(Tuesday|Thursday)\\b"
+      ],
+      "manual_checks": [
+        "Direct writing prompt, not the email itself",
+        "No calibration questions or unnecessary methodology"
+      ]
+    },
+    {
+      "id": "02-simple-general",
+      "domain": "General",
+      "complexity": "Simple",
+      "phase": "compile",
+      "input": "Give me an easy lunch recipe using eggs, rice, and tomatoes for two people.",
+      "context": [],
+      "check_patterns": [
+        "\\b(eggs?|rice)\\b",
+        "\\b(recipe|ingredients|steps)\\b"
+      ],
+      "manual_checks": [
+        "Keep simple and self-contained",
+        "Do not add high-impact risk analysis or extra planning"
+      ]
+    },
+    {
+      "id": "03-simple-code",
+      "domain": "Coding",
+      "complexity": "Simple",
+      "phase": "compile",
+      "input": "Write a Python function that returns True if a string is a palindrome, ignoring spaces and case.",
+      "context": [],
+      "check_patterns": [
+        "\\bPython\\b",
+        "\\bpalindrome\\b"
+      ],
+      "manual_checks": [
+        "Direct execution-ready coding prompt",
+        "Do not demand repository inspection for a self-contained function"
+      ]
+    },
+    {
+      "id": "04-medium-codebase",
+      "domain": "Coding",
+      "complexity": "Medium",
+      "phase": "compile",
+      "input": "In my existing React checkout form, typed values disappear on validation errors. Fix the bug and add regression tests.",
+      "context": [],
+      "check_patterns": [
+        "\\b(inspect|review|examine)\\b",
+        "\\b(test|tests|testing)\\b",
+        "\\b(plan|outline|approach)\\b"
+      ],
+      "manual_checks": [
+        "Ask executing agent to inspect repo first",
+        "Call for plan, assumptions, risks before major changes, then proceed as appropriate",
+        "Do not invent code paths"
+      ]
+    },
+    {
+      "id": "05-high-impact-code",
+      "domain": "Coding",
+      "complexity": "Complex",
+      "phase": "compile",
+      "input": "Move our production Postgres database to another provider without downtime. Plan and perform the migration.",
+      "context": [],
+      "check_patterns": [
+        "\\b(approval|approve|approved|permission)\\b",
+        "\\b(plan|steps|approach)\\b",
+        "\\b(rollback|backup|recovery)\\b"
+      ],
+      "manual_checks": [
+        "Inspect relevant systems before proposing plan",
+        "Stop for approval before major production changes",
+        "Discuss risks and rollback"
+      ]
+    },
+    {
+      "id": "06-ui-visual-only",
+      "domain": "UI/UX",
+      "complexity": "Medium",
+      "phase": "compile",
+      "input": "Audit the visual design of my beta website on desktop and mobile, especially for users who aren't comfortable with technology. Not the backend.",
+      "context": [],
+      "check_patterns": [
+        "\\b(visual|design|interface|UI)\\b",
+        "\\b(mobile|responsive|desktop)\\b"
+      ],
+      "manual_checks": [
+        "Respect visual-only scope; no backend audit",
+        "Novice and experienced perspectives",
+        "Recommend accessibility and responsiveness where relevant"
+      ]
+    },
+    {
+      "id": "07-ui-concept",
+      "domain": "UI/UX",
+      "complexity": "Medium",
+      "phase": "compile",
+      "input": "Conceptually redesign a travel itinerary presentation so customers feel immersed in the story before booking. No implementation yet.",
+      "context": [],
+      "check_patterns": [
+        "\\b(concept|conceptual|experience|journey|story)\\b"
+      ],
+      "manual_checks": [
+        "Design direction and storytelling over code",
+        "Avoid forcing implementation files or frameworks"
+      ]
+    },
+    {
+      "id": "08-research",
+      "domain": "Research",
+      "complexity": "Medium",
+      "phase": "compile",
+      "input": "Research current funding opportunities for an early-stage AI startup in Gulf countries, including incorporation and eligibility requirements.",
+      "context": [],
+      "check_patterns": [
+        "\\b(source|verify|evidence|official|research)\\b",
+        "\\b(eligibility|requirements|incorporation)\\b"
+      ],
+      "manual_checks": [
+        "Use current primary sources and mark unknowns",
+        "Clear region, stage and eligibility criteria",
+        "Do not fabricate calls or deadlines"
+      ]
+    },
+    {
+      "id": "09-analysis",
+      "domain": "Analysis",
+      "complexity": "Medium",
+      "phase": "compile",
+      "input": "Compare two CSV exports of monthly sales and expenses and explain which product lines are most profitable and why.",
+      "context": [],
+      "check_patterns": [
+        "\\b(CSV|data|file|sales)\\b",
+        "\\b(profit|margin|profitable)\\b"
+      ],
+      "manual_checks": [
+        "Specify data inspection before inference",
+        "Calculate and surface unknowns; no invented values",
+        "Offer relevant decision-oriented output"
+      ]
+    },
+    {
+      "id": "10-operations",
+      "domain": "Operations",
+      "complexity": "Complex",
+      "phase": "compile",
+      "input": "Create a practical support operations plan for a 24/7 SaaS beta launch, including roles, incident response and handoffs.",
+      "context": [],
+      "check_patterns": [
+        "\\b(incident|support)\\b",
+        "\\b(handoff|escalation|ownership|roles)\\b"
+      ],
+      "manual_checks": [
+        "Provide actionable runbook, responsibilities and escalation",
+        "No unrelated engineering implementation"
+      ]
+    },
+    {
+      "id": "11-ambiguous-idea",
+      "domain": "Strategy",
+      "complexity": "Medium",
+      "phase": "clarify",
+      "input": "Can you validate my startup idea?",
+      "context": [],
+      "check_patterns": [],
+      "manual_checks": [
+        "Follow exact six-field diagnosis format",
+        "Ask only high-value missing information, max three grouped questions",
+        "Do not invent the startup idea"
+      ]
+    },
+    {
+      "id": "12-after-clarification",
+      "domain": "Strategy",
+      "complexity": "Medium",
+      "phase": "compile",
+      "input": "The idea is a subscription appointment reminder service for small dental clinics. Dental clinic owners pay. Validate whether there is demand before I build it.",
+      "context": [
+        {
+          "role": "user",
+          "content": "Can you validate my startup idea?"
+        },
+        {
+          "role": "assistant",
+          "content": "What is your idea, and who would pay for it?"
+        }
+      ],
+      "check_patterns": [
+        "\\b(dental|clinic)\\b",
+        "\\b(demand|validat|research|interview|customer)\\b"
+      ],
+      "manual_checks": [
+        "Use information given during clarification",
+        "Do not repeat questions already answered",
+        "Prompt a feasible validation plan with evidence criteria"
+      ]
+    }
+  ]
+}
