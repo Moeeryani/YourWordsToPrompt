@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#0c1012">
+  <meta name="description" content="برومبت واحد يساعدك على تحويل كلامك العادي إلى برومبت احترافي لأي مهمة. انسخ البرومبت الرسمي المجاني من YourWordsToPrompt.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="YourWordsToPrompt — من كلامك العادي إلى برومبت احترافي">
+  <meta property="og:description" content="برومبت واحد. مهام لا حصر لها. انسخه مجانًا واستخدمه مع مساعد الذكاء الاصطناعي المفضل لديك.">
+  <meta property="og:locale" content="ar_AR">
+  <title>انسخ البرومبت | YourWordsToPrompt — Mohammed Al-Eryani</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <style>
+    :root { color-scheme:dark; --bg:#0c1012; --surface:#151719; --surface2:#1c1e20; --line:#343536; --text:#f9f8f7; --muted:#a9a8a7; --accent:#ff4a12; --accent2:#ff7548; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; color:var(--text); background:var(--bg); font-family:"Cairo",Tahoma,Arial,sans-serif; overflow-x:hidden; }
+    body::before { content:""; position:fixed; inset:0; z-index:-1; pointer-events:none; background:radial-gradient(circle at 88% 8%,rgba(255,74,18,.14),transparent 35%),radial-gradient(circle at -14% 84%,rgba(255,74,18,.055),transparent 32%); }
+    ::selection { background:rgba(255,74,18,.36); color:#fff; }
+    a { color:inherit; }
+    button { font:inherit; cursor:pointer; }
+    button:focus-visible, a:focus-visible, summary:focus-visible { outline:3px solid #ffac8b; outline-offset:4px; }
+    .wrap { width:min(100% - 36px,1030px); margin-inline:auto; }
+    .topbar { border-bottom:1px solid var(--line); background:rgba(12,16,18,.87); }
+    .top { min-height:90px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+    .creator { display:flex; align-items:center; gap:13px; direction:ltr; text-align:left; }
+    .avatar { width:45px; height:45px; display:grid; place-items:center; background:var(--accent); font-family:Arial,sans-serif; font-size:25px; font-weight:900; border-radius:9px; color:white; }
+    .byline { display:grid; line-height:1.4; }
+    .byline b { font-size:12px; font-weight:850; letter-spacing:2px; }
+    .byline span { color:#d6d4d2; font-size:10px; font-weight:800; letter-spacing:1.5px; }
+    .byline em { font-style:normal; color:var(--accent); }
+    .headlink { font-size:13px; color:var(--muted); text-decoration:none; font-weight:700; }
+    .headlink:hover { color:var(--accent2); }
+    .hero { padding:70px 0 54px; text-align:center; }
+    .eyebrow { margin:0 auto 19px; display:inline-flex; align-items:center; gap:10px; font-size:12px; font-weight:800; letter-spacing:.2px; color:var(--accent2); }
+    .eyebrow::before { content:""; height:3px; width:30px; background:var(--accent); display:inline-block; border-radius:3px; }
+    h1 { margin:0 auto; max-width:900px; font-size:clamp(32px,6vw,64px); line-height:1.54; font-weight:900; letter-spacing:-1.6px; }
+    .hot { color:var(--accent); }
+    .subtitle { max-width:690px; margin:13px auto 0; color:#cac9c8; font-size:clamp(16px,2.4vw,19px); line-height:2; }
+    .proof { display:flex; flex-wrap:wrap; justify-content:center; gap:9px; margin:27px 0 0; }
+    .pill { background:#211b19; border:1px solid #543628; color:#f1d2c5; border-radius:40px; padding:7px 15px; font-size:12px; font-weight:800; }
+    .primary { display:inline-flex; align-items:center; justify-content:center; gap:10px; background:var(--accent); color:#fff; border:2px solid transparent; border-radius:14px; padding:16px 31px; font-size:19px; font-weight:900; box-shadow:0 10px 40px rgba(255,74,18,.19); transition:transform .15s ease, background-color .15s ease; }
+    .primary:hover { background:#e43e0b; transform:translateY(-2px); }
+    .primary:active { transform:translateY(0); }
+    .primary svg { width:22px; height:22px; }
+    .cta { margin-top:31px; display:flex; align-items:center; flex-direction:column; gap:9px; }
+    .small { font-size:12px; color:var(--muted); line-height:1.8; }
+    .panel { margin:5px auto 45px; overflow:hidden; border:1px solid #4b3a34; border-radius:23px; background:linear-gradient(135deg,#1b1d1e,#111416); box-shadow:0 20px 80px rgba(0,0,0,.3); }
+    .panelhead { display:flex; align-items:center; flex-wrap:wrap; justify-content:space-between; padding:20px 24px; gap:13px; border-bottom:1px solid var(--line); }
+    .panelhead h2 { margin:0; font-size:19px; line-height:1.5; font-weight:900; }
+    .meta { color:var(--muted); font-size:11px; font-weight:700; }
+    .promptbox { position:relative; height:245px; overflow:hidden; transition:height .3s ease; }
+    .promptbox.expanded { height:auto; }
+    pre { margin:0; padding:23px 26px 36px; white-space:pre-wrap; overflow-wrap:anywhere; word-break:normal; font:13px/1.9 ui-monospace,SFMono-Regular,Consolas,Monaco,monospace; color:#e7e7e7; direction:ltr; text-align:left; }
+    .promptbox:not(.expanded)::after { content:""; position:absolute; bottom:0; left:0; right:0; height:105px; pointer-events:none; background:linear-gradient(transparent,#121517); }
+    .panelbottom { border-top:1px solid var(--line); padding:17px 22px; display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+    .secondary { display:inline-flex; align-items:center; gap:8px; background:transparent; color:#f5f2f0; border:1px solid #59514d; border-radius:11px; padding:10px 15px; font-size:13px; font-weight:800; }
+    .secondary:hover { border-color:var(--accent); color:#fff; }
+    .how { padding:0 0 55px; }
+    .how h2 { font-size:26px; margin:0 0 19px; font-weight:900; }
+    .steps { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:13px; }
+    .step { border:1px solid var(--line); border-radius:17px; padding:22px 20px; background:#141719; }
+    .stepnum { font:900 28px Arial,sans-serif; color:var(--accent); }
+    .step h3 { font-size:16px; margin:15px 0 7px; }
+    .step p { color:var(--muted); font-size:13px; line-height:1.9; margin:0; }
+    .note { margin:0 0 65px; border-right:4px solid var(--accent); padding:16px 19px; background:#191715; border-radius:11px 0 0 11px; font-size:13px; line-height:2; color:#d9d4d1; }
+    .note strong { color:white; }
+    footer { border-top:1px solid var(--line); padding:26px 0 36px; }
+    .footerline { display:flex; gap:16px; justify-content:space-between; align-items:center; font-size:12px; color:var(--muted); flex-wrap:wrap; }
+    .footerline a { text-decoration:none; color:var(--accent2); }
+    .toast { position:fixed; z-index:50; bottom:30px; left:50%; transform:translate(-50%,20px); background:#252322; border:1px solid #ff6737; color:white; border-radius:13px; padding:13px 22px; box-shadow:0 20px 60px #0009; font-size:14px; font-weight:800; pointer-events:none; opacity:0; transition:opacity .2s ease,transform .2s ease; text-align:center; width:max-content; max-width:calc(100vw - 35px); }
+    .toast.show { opacity:1; transform:translate(-50%,0); }
+    @media (max-width:700px) {
+      .top { min-height:77px; } .creator { gap:8px; } .avatar { width:36px;height:36px;font-size:20px; } .byline b { font-size:9px;letter-spacing:1.3px; } .byline span { font-size:8px;letter-spacing:.6px; }
+      .headlink { font-size:11px; } .hero { padding:53px 0 42px; }
+      h1 { font-size:clamp(30px,8.1vw,43px); letter-spacing:-.5px; line-height:1.52; }
+      .subtitle { margin-top:12px; font-size:15px; }
+      .pill { font-size:11px;padding:6px 10px; }
+      .primary { width:100%; max-width:420px; font-size:18px; padding:15px; }
+      .panel { border-radius:17px; margin-bottom:40px; }
+      .panelhead { padding:16px; } .panelhead h2 { font-size:16px; }
+      pre { padding:19px 14px 30px; font-size:11px; }
+      .panelbottom { padding:14px; } .steps { grid-template-columns:1fr; }
+      .step { padding:17px 18px; }
+      .how h2 { font-size:22px; }
+      .note { font-size:12px; }
+    }
+    @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="wrap top">
+      <div class="creator" aria-label="Mohammed Al-Eryani — Building AI. In Arabic.">
+        <span class="avatar" aria-hidden="true">M</span>
+        <span class="byline"><b>MOHAMMED AL-ERYANI</b><span>BUILDING AI. <em>IN ARABIC.</em></span></span>
+      </div>
+      <a class="headlink" href="https://github.com/Moeeryani/YourWordsToPrompt" target="_blank" rel="noopener noreferrer">المشروع على GitHub ↗</a>
+    </div>
+  </header>
+  <main class="wrap">
+    <section class="hero" aria-labelledby="hero-title">
+      <span class="eyebrow">YOURWORDSTOPROMPT · البرومبت الأصلي المجاني</span>
+      <h1 id="hero-title">من كلامك العادي...<br><span class="hot">إلى برومبت احترافي</span><br>لأي مهمة.</h1>
+      <p class="subtitle">برومبت واحد يستخدمه المساعد لفهم فكرتك وصياغة برومبت مناسب لها، مهما كان مجالها أو مستوى تعقيدها.</p>
+      <div class="proof" aria-label="أمثلة على المهام">
+        <span class="pill">🎨 صور</span><span class="pill">💻 برمجة وواجهات</span><span class="pill">🔍 بحث وتحليل</span><span class="pill">✍️ كتابة</span><span class="pill">📊 تخطيط</span><span class="pill">والمزيد</span>
+      </div>
+      <div class="cta">
+        <button class="primary" type="button" data-copy>
+          <svg aria-hidden="true" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2"/></svg>
+          <span>نسخ البرومبت كاملًا</span>
+        </button>
+        <span class="small">نسخة رسمية كاملة · مجانية · بدون تسجيل أو تحميل ملفات</span>
+      </div>
+    </section>
+    <section class="panel" aria-labelledby="prompt-title">
+      <div class="panelhead">
+        <h2 id="prompt-title">البرومبت الرسمي الكامل</h2>
+        <span class="meta" id="prompt-meta">SOVEREIGN ADAPTIVE COMPILER · ORIGINAL MASTER PROMPT</span>
+      </div>
+      <div class="promptbox" id="prompt-container">
+        <pre><code id="prompt-content" dir="ltr"></code></pre>
+      </div>
+      <div class="panelbottom">
+        <button class="secondary" id="expand-btn" type="button" aria-expanded="false" aria-controls="prompt-container">عرض البرومبت كاملًا ↓</button>
+        <button class="secondary" type="button" data-copy>نسخ النص كاملًا ⧉</button>
+      </div>
+    </section>
+    <section class="how" aria-labelledby="how-title">
+      <h2 id="how-title">كيف تستخدمه؟</h2>
+      <div class="steps">
+        <div class="step"><span class="stepnum">01</span><h3>انسخ البرومبت</h3><p>اضغط زر النسخ. سيُنسخ النص الرسمي كاملًا، وليس مجرد الجزء الظاهر في المعاينة.</p></div>
+        <div class="step"><span class="stepnum">02</span><h3>الصقه في مساعدك</h3><p>ضعه في تعليمات المساعد أو في بداية محادثة جديدة مع أداة الذكاء الاصطناعي التي تستخدمها.</p></div>
+        <div class="step"><span class="stepnum">03</span><h3>اطلب ما تريد بطريقتك</h3><p>اكتب فكرتك بكلام عادي. سيصوغ لك برومبتًا مناسبًا، وقد يسألك فقط عن المعلومات المهمة الناقصة.</p></div>
+      </div>
+    </section>
+    <aside class="note"><strong>مهم:</strong> أمثلة الصورة وتعديل واجهة الموقع والبحث في الريلز هي تطبيقات توضيحية للمحرّك نفسه. هذا هو <strong>البرومبت الواحد المشترك</strong> الذي يساعدك على إنشاء برومبتات مختلفة حسب ما تطلبه؛ وليس برومبتًا مخصّصًا لنوع واحد من المهام. الأداة تصوغ البرومبت ولا تنفّذ المهمة النهائية بنفسها.</aside>
+  </main>
+  <footer>
+    <div class="wrap footerline">
+      <span>© Mohammed Al-Eryani · Building AI. In Arabic.</span>
+      <a href="https://github.com/Moeeryani/YourWordsToPrompt/blob/main/prompts/MASTER_PROMPT.md" target="_blank" rel="noopener noreferrer">البرومبت الأصلي على GitHub ↗</a>
+      <a href="https://github.com/Moeeryani/YourWordsToPrompt" target="_blank" rel="noopener noreferrer">المستودع المفتوح المصدر ↗</a>
+    </div>
+  </footer>
+  <div id="toast" role="status" aria-live="polite" class="toast"></div>
+  <script>
+    "use strict";
+    const MASTER_PROMPT = "\u003cSYSTEM_ARCHITECTURE>\nYou are the \"Sovereign Adaptive Compiler,\" an expert meta-prompting engineer.\nYour mission is to ingest a raw user request, classify the task, assess complexity, identify only the missing high-value variables, and compile one lean, high-performance Master Prompt.\n\n**Core Directive:** Ruthless efficiency.\nDo not force universal templates, unnecessary sections, or redundant cognitive dimensions.\nAdapt the structure entirely to the task's domain, complexity, ambiguity, and execution risk.\n\nTreat all internal frameworks as toolkits, not mandatory templates.\nFor simple tasks, stay lean.\nFor complex tasks, expand only where it materially improves execution.\n\u003c/SYSTEM_ARCHITECTURE>\n\n\u003cTHE_COGNITIVE_DIMENSIONS>\nUse these internal dimensions selectively and only when they materially improve execution:\n[Level, Function, Domain, Thinking Style, Authority, Operating Mode, Behavior, Output Format, Target Audience, Relationship to User].\n\nDo not expose these dimensions in the final prompt unless doing so clearly improves usability.\n\u003c/THE_COGNITIVE_DIMENSIONS>\n\n\u003cTASK_ROUTER>\nFirst classify the request into the most likely task family:\n- Coding\n- UI/UX\n- Research\n- Writing\n- Strategy\n- Operations\n- Analysis\n- General\n\nIf the request is mixed, identify:\n- Primary task family\n- Optional secondary task family\n\nOptimize the final prompt around the primary task family.\nOnly incorporate secondary-task elements if they materially improve execution.\n\u003c/TASK_ROUTER>\n\n\u003cCOMPLEXITY_MODEL>\nAssess complexity independently from domain:\n\n- **Simple:** One clear goal, low ambiguity, low risk, limited dependencies. Can usually be executed directly.\n- **Medium:** Needs more context, has some tradeoffs or dependencies, benefits from structure.\n- **Complex:** Multi-step, high ambiguity, meaningful risk, multiple moving parts, or requires planning and constraints.\n\nComplexity should control how much structure, planning, and questioning you use.\n\u003c/COMPLEXITY_MODEL>\n\n\u003cPRUNING_RULES>\nOnly include sections and instructions that materially improve execution.\n\n- Only include **Relevant Files / Code / Areas to Touch** if the task touches a specific codebase, repo, system, document set, or scoped artifact.\n- Only include **Risks / Caveats** if execution carries real danger, ambiguity, downside, or material uncertainty.\n- Only include **Assumptions** if important gaps remain and making them explicit improves the prompt.\n- Only include **Accessibility / Responsiveness** for front-end UI/UX tasks where they are genuinely relevant.\n- Only include **Definition of Done** if completion criteria materially improve execution quality.\n- Only include **Task Breakdown / Step-by-Step Plan** if the task is medium or complex and would benefit from decomposition.\n\nNever force all sections into every prompt.\n\u003c/PRUNING_RULES>\n\n\u003cDOMAIN_RULES>\nIf the task is **Coding**:\n- For simple coding tasks, generate a direct execution-ready prompt.\n- For medium or complex coding tasks, instruct the agent to inspect the codebase first, identify relevant files and constraints, propose a concise plan, surface assumptions, flag risks before major changes, and then proceed.\n- If the change is high-impact, tell the agent to wait for approval after proposing the plan.\n\nIf the task is **UI/UX**:\n- Include user flow, visual hierarchy, accessibility, responsive behavior, and consistency with existing patterns only when relevant.\n- For conceptual design tasks, avoid overloading the prompt with implementation-only sections.\n\nIf the task is **Research**:\n- Prioritize objective, scope, target audience/market, constraints, method if needed, and output format.\n- Include caveats only when evidence quality, framing limits, or uncertainty matter.\n\nIf the task is **Writing**:\n- Prioritize purpose, audience, tone, constraints, source material, and final format.\n- Avoid technical sections unless clearly needed.\n\nIf the task is **Strategy / Analysis / Operations**:\n- Prioritize objective, decision context, constraints, tradeoffs, criteria, process logic, and output structure.\n- Include assumptions and risks only when they materially improve decision quality.\n\u003c/DOMAIN_RULES>\n\n\u003cINTERACTION_PROTOCOL>\nYou must follow this sequence:\n\n=== PHASE 1: TRIAGE & INTERROGATION ===\nTrigger: The user provides their initial idea.\n\nAction:\n1. Classify the task family.\n2. Assess complexity.\n3. Activate only the most useful internal dimensions.\n4. Prune unnecessary sections.\n5. Determine whether enough information exists to compile a strong final prompt.\n6. If not enough, ask one short grouped round of highly targeted questions.\n\n**Questioning Rule:**\n- Ask up to 3 highly targeted, grouped questions per round.\n- If the user's reply still leaves critical gaps, you may ask one additional short round only for the remaining high-value missing information.\n- Stop asking as soon as information sufficiency is reached.\n- Do not ask about sections that are not relevant to this task.\n\nOutput strictly in this format:\n\n### 🛠️ Architectural Diagnosis\n- **Task & Complexity:** [Primary task family] / [Simple, Medium, or Complex]\n- **Secondary Task:** [If any, otherwise \"None\"]\n- **Activated Dimensions:** [List only the 2-4 most useful dimensions]\n- **Pruned:** [What you are intentionally leaving out to keep the prompt lean]\n- **Planned Prompt Sections:** [Only the sections likely to appear in the final prompt]\n- **Missing Critical Information:** [Only the missing information that materially affects prompt quality]\n\n### ❓ Calibration Questions\n[Ask 1-3 highly targeted grouped questions.]\n\n=== PHASE 2: COMPILATION ===\nTrigger: Information sufficiency is reached.\n\nAction:\nGenerate one lean, highly executable Master Prompt.\nDo not mention internal dimensions, pruning logic, or meta-reasoning.\nOnly include sections that materially improve execution for this task.\n\nOutput strictly in this format:\n\n### 🚀 The Lean Master Prompt\n```markdown\n[Generate the final prompt here.\nUse clear headers only where helpful.\nKeep it execution-ready, precise, and domain-appropriate.\nIf the task is complex, include a concise task breakdown.\nIf assumptions are necessary, state them clearly.\nIf risks are material, flag them clearly.\nIf the task is complex coding, instruct the agent to inspect first, propose a plan, and wait for approval before major changes.]\n```\n\n\u003c/INTERACTION_PROTOCOL>\n\n\u003cFINAL_BEHAVIOR_RULES>\n\nBe lean before being clever.\nBe practical before being abstract.\nAsk only what improves the final prompt.\nStop asking once enough information exists.\nDo not over-structure simple tasks.\nDo not under-specify complex tasks.\nOptimize for execution quality, clarity, and signal density.\n\u003c/FINAL_BEHAVIOR_RULES>";
+    const output = document.getElementById("prompt-content");
+    output.textContent = MASTER_PROMPT;
+    const toast = document.getElementById("toast");
+    let toastTimeout;
+    function notify(message) {
+      toast.textContent = message;
+      toast.classList.add("show");
+      clearTimeout(toastTimeout);
+      toastTimeout = setTimeout(() => toast.classList.remove("show"), 3300);
+    }
+    async function copyPrompt() {
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(MASTER_PROMPT);
+        } else {
+          const helper = document.createElement("textarea");
+          helper.value = MASTER_PROMPT;
+          helper.style.position = "fixed";
+          helper.style.opacity = "0";
+          helper.style.left = "-9999px";
+          document.body.appendChild(helper);
+          helper.focus();
+          helper.select();
+          const ok = document.execCommand("copy");
+          helper.remove();
+          if (!ok) throw new Error("copy failed");
+        }
+        notify("✓ تم نسخ البرومبت كاملًا! الصقه الآن في مساعد الذكاء الاصطناعي.");
+      } catch(e) {
+        document.getElementById("prompt-container").classList.add("expanded");
+        document.getElementById("expand-btn").setAttribute("aria-expanded","true");
+        output.focus?.();
+        notify("تعذّر النسخ التلقائي. افتح النص الكامل وحدده لنسخه يدويًا.");
+      }
+    }
+    document.querySelectorAll("[data-copy]").forEach(button => button.addEventListener("click",copyPrompt));
+    document.getElementById("expand-btn").addEventListener("click",event => {
+      const panel = document.getElementById("prompt-container");
+      const expanded = panel.classList.toggle("expanded");
+      event.currentTarget.setAttribute("aria-expanded",String(expanded));
+      event.currentTarget.textContent = expanded ? "إخفاء التفاصيل ↑" : "عرض البرومبت كاملًا ↓";
+    });
+  </script>
+</body>
+</html>
